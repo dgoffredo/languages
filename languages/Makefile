@@ -11,3 +11,7 @@ iso-639-3.sqlite: iso-639-3.tab
 URL_DIR = https://iso639-3.sil.org/sites/iso639-3/files/downloads
 iso-639-3.tab:
 	wget --quiet --no-use-server-timestamps $(URL_DIR)/$@
+
+.PHONY: clean
+clean:
+	rm -f languages.go iso-639-3.sqlite iso-639-3.tab

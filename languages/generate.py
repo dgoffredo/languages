@@ -6,7 +6,7 @@ db = sqlite3.connect(sys.argv[1])
 
 # See https://iso639-3.sil.org/code_tables/download_tables for more information
 query = """
-select Id, Ref_Name
+select distinct Id, Ref_Name
 from Language
 where Scope = 'I'                  -- (I)ndividual
   and Language_Type in ('L', 'C'); -- (L)iving or (C)onstructed
@@ -30,7 +30,7 @@ package languages
 type Language string
 
 // Names maps each three-letter ISO-639-3 language code to a UTF-8 encoded name
-// for the language, e.g. "aae" maps to "Arbëreshë".
+// for the language, e.g. "aae" maps to "Arbëreshë Albanian".
 var Names = map[Language]string{{
 {go_entries}}}
 """)
