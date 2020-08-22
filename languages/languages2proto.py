@@ -13,7 +13,7 @@ where Scope = 'I'                  -- (I)ndividual
 
 def id_from_alpha3(alpha3):
     """Return a positive integer ID corresponding to the three-letter language
-    code `alpha3`. The ID is the number resulting from interpreting `alpha2`
+    code `alpha3`. The ID is the number resulting from interpreting `alpha3`
     as base-26 big-endian unsigned integer, and then adding one. The
     offset-by-one is to reserve the value zero."""
     alpha3 = alpha3.upper()
