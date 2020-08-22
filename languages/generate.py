@@ -9,7 +9,8 @@ query = """
 select distinct Id, Ref_Name
 from Language
 where Scope = 'I'                  -- (I)ndividual
-  and Language_Type in ('L', 'C'); -- (L)iving or (C)onstructed
+  and Language_Type in ('L', 'C') -- (L)iving or (C)onstructed
+  and Part1 != ''; -- corresponds to an alpha-2 language
 """
 
 
