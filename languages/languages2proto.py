@@ -14,13 +14,14 @@ where Scope = 'I'                  -- (I)ndividual
 def id_from_alpha3(alpha3):
     """Return a positive integer ID corresponding to the three-letter language
     code `alpha3`. The ID is the number resulting from interpreting `alpha2`
-    as base-26 big-endian unsigned integer."""
+    as base-26 big-endian unsigned integer, and then adding one. The
+    offset-by-one is to reserve the value zero."""
     alpha3 = alpha3.upper()
     high, mid, low = alpha3
     origin = ord('A')
     high, mid, low = ord(high) - origin, ord(mid) - origin, ord(low) - origin
     base = 26
-    return high * base**2 + mid * base**1 + low * base**0
+    return high * base**2 + mid * base**1 + low * base**0 + 1
 
 
 print('enum Language {')
