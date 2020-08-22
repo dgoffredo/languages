@@ -1,6 +1,9 @@
 # If we fail to make a file, delete it rather than leaving it there.
 .DELETE_ON_ERROR:
 
+language.proto: iso-639-3.sqlite languages2proto.py
+	python3 languages2proto.py $< >$@
+
 languages.go: iso-639-3.sqlite generate.py
 	python3 generate.py $< >$@
 	go fmt $@
